@@ -185,6 +185,42 @@ export default function Notes({ user }) {
               >
                 Cancel
               </button>
+
+              <button
+  className="secondary"
+  style={{ background: "#ff6b6b", color: "white" }}
+  onClick={async () => {
+    try {
+      console.log("Deleting note:", activeNote);
+
+      const res = await fetch(
+        `https://liquid-note-tracker-api.onrender.com/notes/${activeNote.id}`,
+        { method: "DELETE" }
+      );
+
+      const text = await res.text();
+      console.log("Delete response status:", res.status);
+      console.log("Delete response body:", text);
+
+      if (!res.ok) {
+        throw new Error(text);
+      }
+
+      setNotes(prev =>
+        prev.filter(note => note.id !== activeNote.id)
+      );
+      setActiveNote(null);
+    } catch (err) {
+      console.error("DELETE ERROR:", err);
+      alert("Failed to delete note");
+    }
+  }}
+>
+  Delete
+</button>
+
+
+              
             </div>
           </div>
         </div>

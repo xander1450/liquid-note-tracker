@@ -199,3 +199,25 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
+
+.calendar-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,10,25,0.8);
+  backdrop-filter: blur(16px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-card {
+  width: 420px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.06)
+  );
+  border-radius: 18px;
+  padding: 24px;
+}

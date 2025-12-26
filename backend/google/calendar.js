@@ -17,11 +17,6 @@ const calendar = google.calendar({
 
 
 export async function createEvent(note) {
-  console.log("📅 Creating calendar event payload:", {
-    title: note.title,
-    start: note.start,
-    end: note.end
-  });
 
   const event = await calendar.events.insert({
     calendarId: "primary",
@@ -38,9 +33,17 @@ export async function createEvent(note) {
       }
     }
   });
-
-  console.log("✅ Calendar event created:", event.data.htmlLink);
   return event.data.id;
 }
+
+export async function deleteEvent(eventId) {
+  if (!eventId) return;
+
+  await calendar.events.delete({
+    calendarId: "primary",
+    eventId
+  });
+}
+
 
 

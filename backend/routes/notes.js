@@ -2,6 +2,8 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import { createEvent } from "../google/calendar.js";
+import { deleteEvent } from "../google/calendar.js";
+
 
 const router = express.Router();
 const filePath = path.resolve("data/notes.json");
@@ -55,5 +57,28 @@ router.put("/:id", async (req, res) => {
 
   res.json(notes[index]);
 });
+
+router.delete("/:id", async (req, res) => {
+  const notes = readNotes();
+  const index = notes.findIndex(n => n.id == req.params.id);
+
+  if (index === -1) {
+    return res.status(404).json({ error: "Note not found" });
+  }
+
+  const note = notes[index];
+
+  try {
+    await deleteEvent(note.calendarEventId);
+  } catch (err) {
+    console.error("Calendar delete error:", err.message);
+  }
+
+  notes.splice(index, 1);
+  writeNotes(notes);
+
+  res.json({ success: true });
+});
+
 
 export default router;

@@ -12,7 +12,7 @@ export default function Notes({ user }) {
   const [end, setEnd] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/notes")
+    fetch("https://liquid-note-tracker-api.onrender.com/notes")
       .then(res => res.json())
       .then(setNotes);
   }, []);
@@ -20,7 +20,7 @@ export default function Notes({ user }) {
   const saveNote = async () => {
     if (!title || !start || !end) return alert("Fill all fields");
 
-    const res = await fetch("http://localhost:5000/notes", {
+    const res = await fetch("https://liquid-note-tracker-api.onrender.com/notes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -43,7 +43,7 @@ export default function Notes({ user }) {
 
   const updateNote = async () => {
     const res = await fetch(
-      `http://localhost:5000/notes/${activeNote.id}`,
+      `https://liquid-note-tracker-api.onrender.com/notes/${activeNote.id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

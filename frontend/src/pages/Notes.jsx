@@ -61,12 +61,23 @@ export default function Notes({ user }) {
   return (
     <>
       {/* LOGOUT */}
-      <button
-        className="secondary logout-btn"
-        onClick={() => signOut(auth)}
-      >
-        Logout
-      </button>
+      <div className="user-bar">
+  <div className="avatar">
+    {user.email.charAt(0).toUpperCase()}
+  </div>
+
+  <div className="user-email">
+    {user.email}
+  </div>
+
+  <button
+    className="secondary"
+    onClick={() => signOut(auth)}
+  >
+    Logout
+  </button>
+</div>
+
 
       {/* MAIN NOTES CARD */}
       <div className="glass-card notes-container">

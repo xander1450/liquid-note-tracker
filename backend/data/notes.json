@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1766727670443,
+    "userId": "Emx3oJPLuchPdn8UyxhoRwCrGcz1",
+    "title": "1st note",
+    "content": "Lorem ipsum I am trying to create this full stack app",
+    "start": "2025-12-26T11:11",
+    "end": "2025-12-27T11:11"
+  },
+  {
+    "id": 1766728969938,
+    "userId": "Emx3oJPLuchPdn8UyxhoRwCrGcz1",
+    "title": "2nd note",
+    "content": "fghj",
+    "start": "2025-12-26T11:32",
+    "end": "2025-12-26T00:32",
+    "calendarEventId": null
+  },
+  {
+    "id": 1766729228179,
+    "userId": "Emx3oJPLuchPdn8UyxhoRwCrGcz1",
+    "title": "3rd test",
+    "content": "testng done skdasd syduhs dsakdu ",
+    "start": "2025-12-26T11:36",
+    "end": "2025-12-26T11:50",
+    "calendarEventId": null
+  },
+  {
+    "id": 1766729659848,
+    "userId": "Emx3oJPLuchPdn8UyxhoRwCrGcz1",
+    "title": "Note Testing 4",
+    "content": "note details i don’t know what to write",
+    "start": "2025-12-26T06:14:00.000Z",
+    "end": "2025-12-26T06:30:00.000Z",
+    "calendarEventId": "9imim86knvpmrc1d8uq2g2qm48"
+  }
+]

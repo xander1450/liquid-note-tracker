@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #0b1220;
+  overflow: hidden;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.primary {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: white;
+}
+
+.secondary {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+.glass-card {
+  width: 360px;
+  padding: 28px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.15),
+    rgba(255,255,255,0.05)
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.3),
+    inset 0 0 0 1px rgba(255,255,255,0.15);
+}
+
+.center-wrapper {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 24px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.fish {
+  position: fixed;
+  width: 42px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 9999;
+  transform-origin: center;
+}
+
+.fish-body {
+  position: absolute;
+  width: 32px;
+  height: 20px;
+  background: linear-gradient(135deg, #ff9f1c, #ffbf69);
+  border-radius: 50% 60% 60% 50%;
+  left: 0;
+  top: 2px;
+}
+
+.fish-tail {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #ff9f1c, #ffbf69);
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  right: -10px;
+  top: 5px;
+  animation: tail-swish 0.4s infinite ease-in-out;
+}
+
+.fish-eye {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #000;
+  border-radius: 50%;
+  left: 8px;
+  top: 9px;
+}
+
+@keyframes tail-swish {
+  0% { transform: rotate(10deg); }
+  50% { transform: rotate(-15deg); }
+  100% { transform: rotate(10deg); }
+}
+
+.notes-container {
+  width: 520px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-list {
+  margin-top: 16px;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 6px;
+}
+
+.note-item {
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.note-item:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+}
+
+.fullscreen-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,10,25,0.85);
+  backdrop-filter: blur(20px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-card {
+  width: 600px;
+  max-height: 90vh;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.06)
+  );
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}

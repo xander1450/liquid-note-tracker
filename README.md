@@ -19,7 +19,7 @@ A modern note-taking app that automatically syncs notes with Google Calendar.
 - Hosting: Vercel (frontend), Render (backend)
 
 ## 🚀 Live Demo
-👉 https://your-vercel-url.vercel.app
+👉  https://liquid-note-tracker.vercel.app/
 
 ## 📸 Screenshots
 

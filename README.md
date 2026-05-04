@@ -1,6 +1,6 @@
 # Note Tracker 🌊🐟
 
-A modern note-taking app that automatically syncs notes with Google Calendar.
+A modern note-taking app that automatically syncs notes with Google.
 
 ## ✨ Features
 - Email/password authentication (Firebase)
